@@ -6,7 +6,17 @@
   "type": "module",
   "scripts": {
     "scan": "tsx packages/repo-scanner/src/cli.ts",
-    "scan:ownai": "tsx packages/repo-scanner/src/cli.ts ."
+    "scan:ownai": "tsx packages/repo-scanner/src/cli.ts .",
+    "memory": "tsx packages/memory-system/src/cli.ts",
+    "heatmap": "tsx packages/heatmap-engine/src/cli.ts",
+    "telescope": "tsx packages/telescope-engine/src/cli.ts",
+    "microscope": "tsx packages/microscope-engine/src/cli.ts",
+    "verify": "tsx packages/verifier/src/cli.ts",
+    "replay": "tsx packages/context-replay-engine/src/cli.ts",
+    "ownai:pipeline": "tsx packages/agent-core/src/cli.ts",
+    "ownai:pipeline:self": "tsx packages/agent-core/src/cli.ts . \"analyze OwnAI repository\"",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test --import tsx tests/**/*.test.ts"
   },
   "devDependencies": {
     "@types/node": "^22.10.2",
