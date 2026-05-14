@@ -1,0 +1,16 @@
+{
+  "name": "ownai",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Attention-aware autonomous coding system focused on low-memory local AI workflows.",
+  "type": "module",
+  "scripts": {
+    "scan": "tsx packages/repo-scanner/src/cli.ts",
+    "scan:ownai": "tsx packages/repo-scanner/src/cli.ts ."
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
