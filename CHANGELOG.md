@@ -22,14 +22,19 @@ OwnAI should be built so every system change is traceable.
 
 ### Added
 
+- Roadmap 01 Phase 2: `InMemoryEventBus` with optional in-memory event history (ring buffer), `RecordedEventBus` interface, and typed `emitKernelRoadmap01Event` / `subscribeKernelRoadmap01` helpers; `tests/core-events-bus.test.ts`.
 - Minimal Cognition Kernel shared contracts in `packages/core-types` (branded ids, `KernelTask`, `TaskPacket`, `ContextPack`, `ValidationGate`, `ReplayEntry`, `TrustRecord`, `Observation`, `RecoveryPoint`, `StateTransition`, `DurableKernelTaskStateV0`, `KernelDomainEvent`).
 - `packages/core-interfaces` port interfaces for durable state, packets, context, validation, replay, trust, recovery, and observability sinks.
 - Roadmap 01 kernel event constants and typed payloads in `packages/core-events` (`kernelEvents.ts`), exported alongside legacy `OWN_AI_EVENTS`.
 - `tests/core-contracts.test.ts` smoke coverage for kernel event strings and id branding.
 
+### Changed
+
+- `InMemoryEventBus` lives at `packages/core-events/src/InMemoryEventBus.ts` (roadmap deliverable path); `eventBus.ts` removed.
+
 ### Fixed
 
-- `InMemoryEventBus` now implements `EventBus` fully (`subscribe` / `subscribeAll` return subscriptions; `createEvent` includes `severity`).
+- `InMemoryEventBus` implements `EventBus` fully (`subscribe` / `subscribeAll` return subscriptions; `createEvent` includes `severity`).
 - Telescope navigation uses a single exported `HeatmapState` / `HeatmapRecord` shape so JSON loads type-check against `buildNavigationMap`.
 
 ### Changed

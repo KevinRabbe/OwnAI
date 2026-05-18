@@ -32,6 +32,12 @@ export interface EventBus {
   subscribeAll(handler: EventHandler): EventSubscription;
 }
 
+/** Optional history surface implemented by {@link InMemoryEventBus} (Phase 2 observability). */
+export interface RecordedEventBus extends EventBus {
+  getRecordedEvents(): readonly OwnAIEvent[];
+  clearRecordedEvents(): void;
+}
+
 export const OWN_AI_EVENTS = {
   TASK_CREATED: 'task.created',
   TASK_QUEUED: 'task.queued',

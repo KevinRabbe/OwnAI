@@ -1,4 +1,4 @@
-import { InMemoryEventBus } from '../../core-events/src/eventBus.js';
+import { InMemoryEventBus } from '../../core-events/src/InMemoryEventBus.js';
 import { OWN_AI_EVENTS } from '../../core-events/src/types.js';
 
 import { scanRepository } from '../../repo-scanner/src/scanner.js';
