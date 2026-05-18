@@ -22,6 +22,7 @@ OwnAI should be built so every system change is traceable.
 
 ### Added
 
+- Roadmap 01 Phases 3–10: `task-state`, `task-packet-generator`, `context-protocol`, `validation-gates`, `replay-store`, `trust-registry`, `observability-layer` (`FileTimelineWriter`), and `kernel-slice` (`runVerticalSlice` + `npm run ownai:kernel-slice`).
 - Roadmap 01 Phase 2: `InMemoryEventBus` with optional in-memory event history (ring buffer), `RecordedEventBus` interface, and typed `emitKernelRoadmap01Event` / `subscribeKernelRoadmap01` helpers; `tests/core-events-bus.test.ts`.
 - Minimal Cognition Kernel shared contracts in `packages/core-types` (branded ids, `KernelTask`, `TaskPacket`, `ContextPack`, `ValidationGate`, `ReplayEntry`, `TrustRecord`, `Observation`, `RecoveryPoint`, `StateTransition`, `DurableKernelTaskStateV0`, `KernelDomainEvent`).
 - `packages/core-interfaces` port interfaces for durable state, packets, context, validation, replay, trust, recovery, and observability sinks.

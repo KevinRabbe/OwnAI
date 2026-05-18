@@ -1,3 +1,5 @@
+export { FileTimelineWriter } from './timelineWriter.js';
+
 export interface TimelineEvent {
   id: string;
   source: string;
