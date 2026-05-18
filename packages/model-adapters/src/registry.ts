@@ -1,5 +1,6 @@
 import type {
   ModelAdapter,
+  ModelCapability,
   RegisteredModel
 } from './types.js';
 
@@ -18,13 +19,22 @@ export class ModelRegistry {
     return [...this.adapters.values()].map(adapter => ({
       id: adapter.id,
       provider: adapter.provider,
-      capabilities: adapter.capabilities
+      capabilities: adapter.capabilities,
+      role: adapter.role
     }));
   }
 
-  findByCapability(capability: string): ModelAdapter[] {
+  findByCapability(capability: ModelCapability): ModelAdapter[] {
     return [...this.adapters.values()].filter(adapter =>
-      adapter.capabilities.includes(capability as never)
+      adapter.capabilities.includes(capability)
     );
+  }
+
+  findByRole(role: NonNullable<ModelAdapter['role']>): ModelAdapter[] {
+    return [...this.adapters.values()].filter(adapter => adapter.role === role);
+  }
+
+  clear(): void {
+    this.adapters.clear();
   }
 }

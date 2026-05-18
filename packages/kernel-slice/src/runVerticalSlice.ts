@@ -37,6 +37,12 @@ import {
   registerValidationGate,
   recordValidationResult
 } from '../../validation-gates/src/index.js';
+import { OWN_AI_EVENTS } from '../../core-events/src/types.js';
+import type { PlanningDepth } from '../../model-adapters/src/modelRole.js';
+import {
+  loadModelRoutingConfig,
+  refineTaskGoalWithLocalModel
+} from '../../model-adapters/src/index.js';
 
 export interface RunVerticalSliceOptions {
   workspaceRoot: string;
@@ -44,6 +50,9 @@ export interface RunVerticalSliceOptions {
   /** Resume an interrupted task when provided. */
   taskId?: TaskId;
   trustTargetKey?: TrustTargetKey;
+  /** When true (default), refine packet goal via local Ollama routing when available. */
+  useLocalModel?: boolean;
+  planningDepth?: PlanningDepth;
 }
 
 export interface VerticalSliceResult {
@@ -51,6 +60,8 @@ export interface VerticalSliceResult {
   resumed: boolean;
   completed: boolean;
   timelineEntries: number;
+  localModelUsed?: boolean;
+  routedModelId?: string;
 }
 
 /**
@@ -70,6 +81,8 @@ export async function runVerticalSlice(
 
   let taskId = options.taskId ?? asTaskId(crypto.randomUUID());
   let resumed = false;
+  let localModelUsed = false;
+  let routedModelId: string | undefined;
 
   let state =
     (await stateStore.load(taskId)) ??
@@ -99,7 +112,45 @@ export async function runVerticalSlice(
     (await packetStore.getByTaskId(taskId));
 
   if (!packet) {
-    packet = generateTaskPacketFromRequest({ taskId, rawRequest: options.rawRequest });
+    let packetRequest = options.rawRequest;
+
+    if (options.useLocalModel !== false) {
+      const routingConfig = await loadModelRoutingConfig(
+        options.workspaceRoot
+      );
+      const refined = await refineTaskGoalWithLocalModel({
+        rawRequest: options.rawRequest,
+        config: routingConfig,
+        planningDepth: options.planningDepth ?? 'small'
+      });
+
+      if (refined.usedModel) {
+        packetRequest = refined.goal;
+        localModelUsed = true;
+        routedModelId = refined.modelId;
+
+        await bus.emit(
+          bus.createEvent({
+            type: OWN_AI_EVENTS.MODEL_ROUTED,
+            source: 'kernel-slice',
+            taskId,
+            payload: {
+              modelId: refined.modelId,
+              role: refined.role,
+              planningDepth: options.planningDepth ?? 'small'
+            }
+          })
+        );
+        await timeline.recordEvent(
+          bus.getRecordedEvents()[bus.getRecordedEvents().length - 1]!
+        );
+      }
+    }
+
+    packet = generateTaskPacketFromRequest({
+      taskId,
+      rawRequest: packetRequest
+    });
     await packetStore.save(packet);
     await emitKernelRoadmap01Event(bus, {
       type: KERNEL_ROADMAP_01_EVENTS.TASK_PACKET_CREATED,
@@ -252,6 +303,8 @@ export async function runVerticalSlice(
     taskId,
     resumed,
     completed: state.status === 'completed',
-    timelineEntries
+    timelineEntries,
+    localModelUsed: localModelUsed || undefined,
+    routedModelId
   };
 }

@@ -16,6 +16,9 @@
     "ownai:pipeline": "tsx packages/agent-core/src/cli.ts",
     "ownai:pipeline:self": "tsx packages/agent-core/src/cli.ts . \"analyze OwnAI repository\"",
     "ownai:kernel-slice": "tsx packages/kernel-slice/src/cli.ts",
+    "ownai:models": "tsx packages/model-adapters/src/cli.ts probe",
+    "ownai:models:init": "tsx packages/model-adapters/src/cli.ts init-config",
+    "ownai:models:test": "tsx packages/model-adapters/src/cli.ts route-test",
     "typecheck": "tsc --noEmit",
     "test": "node --test --import tsx tests/**/*.test.ts"
   },

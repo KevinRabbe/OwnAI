@@ -5,3 +5,8 @@ export interface EnvironmentState {
   batteryMode?: boolean;
   cloudAvailable?: boolean;
 }
+
+export {
+  probeOllamaEnvironment,
+  type OllamaEnvironmentSnapshot
+} from './ollamaEnvironment.js';

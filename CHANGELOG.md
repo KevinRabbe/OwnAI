@@ -22,6 +22,7 @@ OwnAI should be built so every system change is traceable.
 
 ### Added
 
+- Roadmap 02: local model routing and Ollama integration (`OllamaClient`, role-based `ModelRouter`, `bootstrapModelRegistry`, `refineTaskGoalWithLocalModel`, `probeOllamaEnvironment`, CLI via `npm run ownai:models`). Kernel slice optionally refines packet goals when Ollama is available.
 - Roadmap 01 Phases 3–10: `task-state`, `task-packet-generator`, `context-protocol`, `validation-gates`, `replay-store`, `trust-registry`, `observability-layer` (`FileTimelineWriter`), and `kernel-slice` (`runVerticalSlice` + `npm run ownai:kernel-slice`).
 - Roadmap 01 Phase 2: `InMemoryEventBus` with optional in-memory event history (ring buffer), `RecordedEventBus` interface, and typed `emitKernelRoadmap01Event` / `subscribeKernelRoadmap01` helpers; `tests/core-events-bus.test.ts`.
 - Minimal Cognition Kernel shared contracts in `packages/core-types` (branded ids, `KernelTask`, `TaskPacket`, `ContextPack`, `ValidationGate`, `ReplayEntry`, `TrustRecord`, `Observation`, `RecoveryPoint`, `StateTransition`, `DurableKernelTaskStateV0`, `KernelDomainEvent`).
