@@ -1,3 +1,7 @@
+/**
+ * Pipeline execution graph (repo scan → memory → …). Not the same as `KernelTask` / `DurableKernelTaskStateV0`.
+ */
+
 export type TaskNodeType =
   | 'scan'
   | 'memory_update'

@@ -8,7 +8,7 @@ import type {
   ZoomDepth
 } from './types.js';
 
-interface HeatmapRecord {
+export interface HeatmapRecord {
   path: string;
   decision: string;
   reasons: string[];
@@ -19,7 +19,7 @@ interface HeatmapRecord {
   };
 }
 
-interface HeatmapState {
+export interface HeatmapState {
   generatedAt: string;
   records: HeatmapRecord[];
 }

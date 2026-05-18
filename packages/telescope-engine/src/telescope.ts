@@ -7,11 +7,7 @@ import type {
   GenerateNavigationMapOptions,
   NavigationMap
 } from './types.js';
-
-interface HeatmapState {
-  generatedAt: string;
-  records: unknown[];
-}
+import type { HeatmapState } from './navigation.js';
 
 export async function generateNavigationMap(
   options: GenerateNavigationMapOptions
