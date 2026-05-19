@@ -111,7 +111,7 @@ Roadmap documents override brainstorm/reference documents for implementation.
 
 | Document | Version | Status | Purpose | Notes |
 |---|---:|---|---|---|
-| `docs/DOCUMENT_REGISTRY.md` | 1.2 | active | Central index of docs, status, and cleanup decisions | This file. Must be updated whenever new architecture/roadmap docs are added. |
+| `docs/DOCUMENT_REGISTRY.md` | 1.3 | active | Central index of docs, status, and cleanup decisions | This file. Must be updated whenever new architecture/roadmap docs are added. |
 | `docs/DOCUMENT_LIFECYCLE_AND_ARCHIVING.md` | 1.0 | active | Defines doc create/split/merge/archive/delete lifecycle | Complements this registry. |
 | `docs/ANTI_DUPLICATION_AND_SOURCE_OF_TRUTH_PROTOCOL.md` | 1.0 | active | Prevents duplicate docs, systems, issues, and source-of-truth conflicts | Agents must check this before creating new architecture or implementation tracks. |
 | `docs/ROADMAP_IDEA_PARKING_LOT.md` | 1.0 | active | Stores strong ideas without polluting active roadmap | Keep active as controlled idea buffer. Review periodically. |
@@ -137,6 +137,7 @@ Roadmap documents override brainstorm/reference documents for implementation.
 |---|---:|---|---|---|
 | `docs/GOVERNANCE_MATURITY_MODEL.md` | 1.0 | active | Governance as enforceable operational control infrastructure | Key source for governance direction. |
 | `docs/COGNITION_SEPARATION_OF_POWERS.md` | 1.0 | active | Ensures model is not judge, witness, and executor at once | Foundational safety rule. |
+| `docs/PERMISSION_AND_ACTION_AUTHORITY_MODEL.md` | 1.0 | active | Defines permission levels, action authority, approval gates, and action evidence | Important for future browser/email/app automation. Roadmap 01 may only define records/flags. |
 | `docs/VOTING_AND_DECISION_SYSTEMS.md` | 1.0 | reference | Decision and voting design rules | Roadmap 01 should only define records, not full voting. |
 | `docs/WORKFLOW_FLAGS_AND_STRUCTURED_INTERRUPTS.md` | 1.0 | active | Flags as structured workflow interrupts | Supports worker communication, handoff, and observability. |
 | `docs/FLAG_LIFECYCLE_AND_ACCEPTANCE_RULES.md` | 1.0 | active | Lifecycle and acceptance rules for workflow flags | Prevents completion with unresolved blocking flags. |
@@ -210,6 +211,7 @@ AGENTS.md
 AGENT_BRANCH_ACCEPTANCE_CHECKLIST.md
 GOVERNANCE_MATURITY_MODEL.md
 COGNITION_SEPARATION_OF_POWERS.md
+PERMISSION_AND_ACTION_AUTHORITY_MODEL.md
 AUTONOMY_WAIT_STATES_AND_HUMAN_HANDOFF.md
 DEPENDENCY_AWARE_AUTONOMY.md
 PARALLELISM_MATURITY_AND_RISK_CLASSES.md
@@ -287,6 +289,7 @@ DOCUMENT_REGISTRY.md
 ANTI_DUPLICATION_AND_SOURCE_OF_TRUTH_PROTOCOL.md
 GOVERNANCE_MATURITY_MODEL.md
 COGNITION_SEPARATION_OF_POWERS.md
+PERMISSION_AND_ACTION_AUTHORITY_MODEL.md
 MODEL_COGNITIVE_LOAD_REDUCTION.md
 AGENT_BRANCH_ACCEPTANCE_CHECKLIST.md
 ```
