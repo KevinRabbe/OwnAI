@@ -172,6 +172,61 @@ kernel-compatible
 
 These are valuable but should not distract from Roadmap 01.
 
+## Future Interface Layer — Editor Adapter, Browser Workspace, Terminal Adapter
+
+OwnAI should not replace trusted user tools too early.
+
+It should eventually wrap them with cognition infrastructure.
+
+Possible interface surfaces:
+
+```text
+- Editor Adapter
+- Browser Workspace
+- Terminal Adapter
+- Git Adapter
+```
+
+Editor direction:
+
+```text
+Use an existing editor ecosystem first, likely VS Code-style integration.
+Do not build a full editor from scratch unless there is a strong reason later.
+```
+
+Browser direction:
+
+```text
+Provide an integrated governed browser workspace for research, docs, citations, source collection, and web evidence.
+```
+
+Browser should create artifacts such as:
+
+```text
+ResearchNote
+SourceRecord
+CitationRecord
+DownloadedDocRecord
+WebTaskEvidence
+```
+
+Governance constraints:
+
+```text
+browser may read
+browser may collect sources
+browser may summarize
+browser must not auto-submit forms, payments, account actions, or destructive actions without human approval
+```
+
+Reason parked:
+
+```text
+valuable future interface layer, but Roadmap 01 must prove the kernel before UI/editor/browser integration
+```
+
+---
+
 ## Advanced KV Cache Surgery
 
 Examples:
