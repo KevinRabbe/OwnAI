@@ -111,7 +111,7 @@ Roadmap documents override brainstorm/reference documents for implementation.
 
 | Document | Version | Status | Purpose | Notes |
 |---|---:|---|---|---|
-| `docs/DOCUMENT_REGISTRY.md` | 1.4 | active | Central index of docs, status, and cleanup decisions | This file. Must be updated whenever new architecture/roadmap docs are added. |
+| `docs/DOCUMENT_REGISTRY.md` | 1.5 | active | Central index of docs, status, and cleanup decisions | This file. Must be updated whenever new architecture/roadmap docs are added. |
 | `docs/DOCUMENT_LIFECYCLE_AND_ARCHIVING.md` | 1.0 | active | Defines doc create/split/merge/archive/delete lifecycle | Complements this registry. |
 | `docs/ANTI_DUPLICATION_AND_SOURCE_OF_TRUTH_PROTOCOL.md` | 1.0 | active | Prevents duplicate docs, systems, issues, and source-of-truth conflicts | Agents must check this before creating new architecture or implementation tracks. |
 | `docs/ROADMAP_IDEA_PARKING_LOT.md` | 1.0 | active | Stores strong ideas without polluting active roadmap | Keep active as controlled idea buffer. Review periodically. |
@@ -123,6 +123,7 @@ Roadmap documents override brainstorm/reference documents for implementation.
 | Document | Version | Status | Purpose | Notes |
 |---|---:|---|---|---|
 | `docs/ARCHITECTURE_RELATIONSHIP_DIAGRAMS.md` | 1.0 | active | High-level 1→1, 1→N, N→1, and N↔N relationship diagrams | Use before adding new nodes/connections. Helps prevent spaghetti architecture. |
+| `docs/CONNECTION_OWNERSHIP_AND_VALIDATION_MATRIX.md` | 1.0 | active | Defines connection ownership, artifacts, validation paths, risk, and observability | Use before accepting new system connections. |
 
 ---
 
@@ -221,6 +222,7 @@ GOVERNANCE_MATURITY_MODEL.md
 COGNITION_SEPARATION_OF_POWERS.md
 PERMISSION_AND_ACTION_AUTHORITY_MODEL.md
 ARCHITECTURE_RELATIONSHIP_DIAGRAMS.md
+CONNECTION_OWNERSHIP_AND_VALIDATION_MATRIX.md
 AUTONOMY_WAIT_STATES_AND_HUMAN_HANDOFF.md
 DEPENDENCY_AWARE_AUTONOMY.md
 PARALLELISM_MATURITY_AND_RISK_CLASSES.md
@@ -296,6 +298,7 @@ AGENTS.md
 ROADMAP_01_MINIMAL_COGNITION_KERNEL.md
 DOCUMENT_REGISTRY.md
 ARCHITECTURE_RELATIONSHIP_DIAGRAMS.md
+CONNECTION_OWNERSHIP_AND_VALIDATION_MATRIX.md
 ANTI_DUPLICATION_AND_SOURCE_OF_TRUTH_PROTOCOL.md
 GOVERNANCE_MATURITY_MODEL.md
 COGNITION_SEPARATION_OF_POWERS.md
