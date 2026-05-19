@@ -31,6 +31,7 @@ versioned, reviewed, deprecated, merged, archived, or deleted when obsolete.
 - Prevent architecture drift across conflicting docs
 - Make Roadmap 01 implementation easier to navigate
 - Help agents expand only the detail they need
+- Prevent duplicate systems, duplicate docs, and duplicate issue tracks
 
 ---
 
@@ -110,8 +111,9 @@ Roadmap documents override brainstorm/reference documents for implementation.
 
 | Document | Version | Status | Purpose | Notes |
 |---|---:|---|---|---|
-| `docs/DOCUMENT_REGISTRY.md` | 1.1 | active | Central index of docs, status, and cleanup decisions | This file. Must be updated whenever new architecture/roadmap docs are added. |
+| `docs/DOCUMENT_REGISTRY.md` | 1.2 | active | Central index of docs, status, and cleanup decisions | This file. Must be updated whenever new architecture/roadmap docs are added. |
 | `docs/DOCUMENT_LIFECYCLE_AND_ARCHIVING.md` | 1.0 | active | Defines doc create/split/merge/archive/delete lifecycle | Complements this registry. |
+| `docs/ANTI_DUPLICATION_AND_SOURCE_OF_TRUTH_PROTOCOL.md` | 1.0 | active | Prevents duplicate docs, systems, issues, and source-of-truth conflicts | Agents must check this before creating new architecture or implementation tracks. |
 | `docs/ROADMAP_IDEA_PARKING_LOT.md` | 1.0 | active | Stores strong ideas without polluting active roadmap | Keep active as controlled idea buffer. Review periodically. |
 
 ---
@@ -217,6 +219,7 @@ WORKFLOW_FLAGS_AND_STRUCTURED_INTERRUPTS.md
 FLAG_LIFECYCLE_AND_ACCEPTANCE_RULES.md
 DOCUMENT_LIFECYCLE_AND_ARCHIVING.md
 PROTECTED_CORE_ARCHITECTURE.md
+ANTI_DUPLICATION_AND_SOURCE_OF_TRUTH_PROTOCOL.md
 ```
 
 Action taken:
@@ -281,6 +284,7 @@ These should remain active and protected from accidental replacement:
 AGENTS.md
 ROADMAP_01_MINIMAL_COGNITION_KERNEL.md
 DOCUMENT_REGISTRY.md
+ANTI_DUPLICATION_AND_SOURCE_OF_TRUTH_PROTOCOL.md
 GOVERNANCE_MATURITY_MODEL.md
 COGNITION_SEPARATION_OF_POWERS.md
 MODEL_COGNITIVE_LOAD_REDUCTION.md
@@ -366,6 +370,28 @@ registry first
 → expand only relevant active docs
 → ignore archived/reference docs unless needed
 ```
+
+---
+
+## Rule 7 — Do Not Redo Planned Or Documented Work
+
+Before creating new architecture, packages, docs, or issues, check:
+
+```text
+docs/DOCUMENT_REGISTRY.md
+docs/ANTI_DUPLICATION_AND_SOURCE_OF_TRUTH_PROTOCOL.md
+docs/ROADMAP_IDEA_PARKING_LOT.md
+existing GitHub issues
+existing packages
+```
+
+If the concept already exists:
+
+```text
+extend it, reference it, or update it
+```
+
+Do not create a duplicate track.
 
 ---
 
