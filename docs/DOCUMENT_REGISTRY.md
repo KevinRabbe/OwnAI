@@ -111,7 +111,7 @@ Roadmap documents override brainstorm/reference documents for implementation.
 
 | Document | Version | Status | Purpose | Notes |
 |---|---:|---|---|---|
-| `docs/DOCUMENT_REGISTRY.md` | 2.0 | active | Central index of docs, status, and cleanup decisions | This file. Must be updated whenever new architecture/roadmap docs are added. |
+| `docs/DOCUMENT_REGISTRY.md` | 2.1 | active | Central index of docs, status, and cleanup decisions | This file. Must be updated whenever new architecture/roadmap docs are added. |
 | `docs/DOCUMENT_LIFECYCLE_AND_ARCHIVING.md` | 1.0 | active | Defines doc create/split/merge/archive/delete lifecycle | Complements this registry. |
 | `docs/ANTI_DUPLICATION_AND_SOURCE_OF_TRUTH_PROTOCOL.md` | 1.0 | active | Prevents duplicate docs, systems, issues, and source-of-truth conflicts | Agents must check this before creating new architecture or implementation tracks. |
 | `docs/CODING_AGENT_DOCUMENTATION_WORKFLOW.md` | 1.0 | active | Defines how development and runtime agents use docs/operational memory before, during, and after meaningful work | Required workflow for agents. |
@@ -127,6 +127,7 @@ Roadmap documents override brainstorm/reference documents for implementation.
 | `docs/CONNECTION_OWNERSHIP_AND_VALIDATION_MATRIX.md` | 1.0 | active | Defines connection ownership, artifacts, validation paths, risk, and observability | Use before accepting new system connections. |
 | `docs/HEATMAP_TELESCOPE_MICROSCOPE_LENS_MODEL.md` | 1.0 | active | Defines the conceptual attention-navigation model for OwnAI | Visual cognition/navigation concept. Full UI comes later; Roadmap 01 only lays data foundations. |
 | `docs/HEATMAP_SIGNAL_SOURCES_AND_SCORING.md` | 1.0 | active | Defines real signal sources, scoring dimensions, lenses, and JSON output for the heatmap system | Implementation bridge from concept to real data. Build the heatmap brain before UI. |
+| `docs/ALGORITHMIC_PRIMITIVES_FOR_OWNAI.md` | 1.0 | active | Defines algorithmic primitives for context reduction, routing, planning, chunk scanning, trust, and safety stops | Use algorithms to reduce model thinking and preserve intelligence with less context. |
 
 ---
 
@@ -230,6 +231,7 @@ ARCHITECTURE_RELATIONSHIP_DIAGRAMS.md
 CONNECTION_OWNERSHIP_AND_VALIDATION_MATRIX.md
 HEATMAP_TELESCOPE_MICROSCOPE_LENS_MODEL.md
 HEATMAP_SIGNAL_SOURCES_AND_SCORING.md
+ALGORITHMIC_PRIMITIVES_FOR_OWNAI.md
 CODING_AGENT_DOCUMENTATION_WORKFLOW.md
 CODE_EXPLANATION_AND_COMPREHENSION_GATE.md
 EXPLOIT_DETECTION_AND_ABUSE_CASE_REVIEW.md
@@ -309,6 +311,7 @@ ROADMAP_01_MINIMAL_COGNITION_KERNEL.md
 DOCUMENT_REGISTRY.md
 HEATMAP_TELESCOPE_MICROSCOPE_LENS_MODEL.md
 HEATMAP_SIGNAL_SOURCES_AND_SCORING.md
+ALGORITHMIC_PRIMITIVES_FOR_OWNAI.md
 CODING_AGENT_DOCUMENTATION_WORKFLOW.md
 CODE_EXPLANATION_AND_COMPREHENSION_GATE.md
 EXPLOIT_DETECTION_AND_ABUSE_CASE_REVIEW.md
