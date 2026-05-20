@@ -111,7 +111,7 @@ Roadmap documents override brainstorm/reference documents for implementation.
 
 | Document | Version | Status | Purpose | Notes |
 |---|---:|---|---|---|
-| `docs/DOCUMENT_REGISTRY.md` | 1.8 | active | Central index of docs, status, and cleanup decisions | This file. Must be updated whenever new architecture/roadmap docs are added. |
+| `docs/DOCUMENT_REGISTRY.md` | 1.9 | active | Central index of docs, status, and cleanup decisions | This file. Must be updated whenever new architecture/roadmap docs are added. |
 | `docs/DOCUMENT_LIFECYCLE_AND_ARCHIVING.md` | 1.0 | active | Defines doc create/split/merge/archive/delete lifecycle | Complements this registry. |
 | `docs/ANTI_DUPLICATION_AND_SOURCE_OF_TRUTH_PROTOCOL.md` | 1.0 | active | Prevents duplicate docs, systems, issues, and source-of-truth conflicts | Agents must check this before creating new architecture or implementation tracks. |
 | `docs/CODING_AGENT_DOCUMENTATION_WORKFLOW.md` | 1.0 | active | Defines how development and runtime agents use docs/operational memory before, during, and after meaningful work | Required workflow for agents. |
@@ -125,6 +125,7 @@ Roadmap documents override brainstorm/reference documents for implementation.
 |---|---:|---|---|---|
 | `docs/ARCHITECTURE_RELATIONSHIP_DIAGRAMS.md` | 1.0 | active | High-level 1→1, 1→N, N→1, and N↔N relationship diagrams | Use before adding new nodes/connections. Helps prevent spaghetti architecture. |
 | `docs/CONNECTION_OWNERSHIP_AND_VALIDATION_MATRIX.md` | 1.0 | active | Defines connection ownership, artifacts, validation paths, risk, and observability | Use before accepting new system connections. |
+| `docs/HEATMAP_TELESCOPE_MICROSCOPE_LENS_MODEL.md` | 1.0 | active | Defines the conceptual attention-navigation model for OwnAI | Visual cognition/navigation concept. Full UI comes later; Roadmap 01 only lays data foundations. |
 
 ---
 
@@ -226,6 +227,7 @@ COGNITION_SEPARATION_OF_POWERS.md
 PERMISSION_AND_ACTION_AUTHORITY_MODEL.md
 ARCHITECTURE_RELATIONSHIP_DIAGRAMS.md
 CONNECTION_OWNERSHIP_AND_VALIDATION_MATRIX.md
+HEATMAP_TELESCOPE_MICROSCOPE_LENS_MODEL.md
 CODING_AGENT_DOCUMENTATION_WORKFLOW.md
 CODE_EXPLANATION_AND_COMPREHENSION_GATE.md
 EXPLOIT_DETECTION_AND_ABUSE_CASE_REVIEW.md
@@ -303,6 +305,7 @@ These should remain active and protected from accidental replacement:
 AGENTS.md
 ROADMAP_01_MINIMAL_COGNITION_KERNEL.md
 DOCUMENT_REGISTRY.md
+HEATMAP_TELESCOPE_MICROSCOPE_LENS_MODEL.md
 CODING_AGENT_DOCUMENTATION_WORKFLOW.md
 CODE_EXPLANATION_AND_COMPREHENSION_GATE.md
 EXPLOIT_DETECTION_AND_ABUSE_CASE_REVIEW.md
