@@ -111,7 +111,7 @@ Roadmap documents override brainstorm/reference documents for implementation.
 
 | Document | Version | Status | Purpose | Notes |
 |---|---:|---|---|---|
-| `docs/DOCUMENT_REGISTRY.md` | 2.2 | active | Central index of docs, status, and cleanup decisions | This file. Must be updated whenever new architecture/roadmap docs are added. |
+| `docs/DOCUMENT_REGISTRY.md` | 2.3 | active | Central index of docs, status, and cleanup decisions | This file. Must be updated whenever new architecture/roadmap docs are added. |
 | `docs/DOCUMENT_LIFECYCLE_AND_ARCHIVING.md` | 1.0 | active | Defines doc create/split/merge/archive/delete lifecycle | Complements this registry. |
 | `docs/ANTI_DUPLICATION_AND_SOURCE_OF_TRUTH_PROTOCOL.md` | 1.0 | active | Prevents duplicate docs, systems, issues, and source-of-truth conflicts | Agents must check this before creating new architecture or implementation tracks. |
 | `docs/CODING_AGENT_DOCUMENTATION_WORKFLOW.md` | 1.0 | active | Defines how development and runtime agents use docs/operational memory before, during, and after meaningful work | Required workflow for agents. |
@@ -154,6 +154,7 @@ Roadmap documents override brainstorm/reference documents for implementation.
 | `docs/GOVERNANCE_MATURITY_MODEL.md` | 1.0 | active | Governance as enforceable operational control infrastructure | Key source for governance direction. |
 | `docs/COGNITION_SEPARATION_OF_POWERS.md` | 1.0 | active | Ensures model is not judge, witness, and executor at once | Foundational safety rule. |
 | `docs/PERMISSION_AND_ACTION_AUTHORITY_MODEL.md` | 1.0 | active | Defines permission levels, action authority, approval gates, and action evidence | Important for future browser/email/app automation. Roadmap 01 may only define records/flags. |
+| `docs/IMMUNE_SYSTEM_TRUST_BOUNDARY.md` | 1.0 | active | Defines self/non-self/changed-self/fake-self trust boundary checks for artifacts, agents, packages, permissions, and evidence | Immune-system style safety layer: identify what belongs and what is pretending to belong. |
 | `docs/VOTING_AND_DECISION_SYSTEMS.md` | 1.0 | reference | Decision and voting design rules | Roadmap 01 should only define records, not full voting. |
 | `docs/WORKFLOW_FLAGS_AND_STRUCTURED_INTERRUPTS.md` | 1.0 | active | Flags as structured workflow interrupts | Supports worker communication, handoff, and observability. |
 | `docs/FLAG_LIFECYCLE_AND_ACCEPTANCE_RULES.md` | 1.0 | active | Lifecycle and acceptance rules for workflow flags | Prevents completion with unresolved blocking flags. |
@@ -228,6 +229,7 @@ AGENT_BRANCH_ACCEPTANCE_CHECKLIST.md
 GOVERNANCE_MATURITY_MODEL.md
 COGNITION_SEPARATION_OF_POWERS.md
 PERMISSION_AND_ACTION_AUTHORITY_MODEL.md
+IMMUNE_SYSTEM_TRUST_BOUNDARY.md
 ARCHITECTURE_RELATIONSHIP_DIAGRAMS.md
 CONNECTION_OWNERSHIP_AND_VALIDATION_MATRIX.md
 HEATMAP_TELESCOPE_MICROSCOPE_LENS_MODEL.md
@@ -311,6 +313,7 @@ These should remain active and protected from accidental replacement:
 AGENTS.md
 ROADMAP_01_MINIMAL_COGNITION_KERNEL.md
 DOCUMENT_REGISTRY.md
+IMMUNE_SYSTEM_TRUST_BOUNDARY.md
 HEATMAP_TELESCOPE_MICROSCOPE_LENS_MODEL.md
 HEATMAP_SIGNAL_SOURCES_AND_SCORING.md
 ALGORITHMIC_PRIMITIVES_FOR_OWNAI.md
