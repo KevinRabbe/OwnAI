@@ -188,6 +188,13 @@ OwnAI does not compete by being the biggest model.
 OwnAI competes by building the best cognition infrastructure around models.
 ```
 
+Short thesis:
+
+```text
+AI gave us the engine.
+OwnAI builds the car.
+```
+
 Mental model:
 
 ```text
@@ -200,6 +207,16 @@ Strategic thesis:
 ```text
 Bigger-model competition is a different battlefield.
 OwnAI should improve capability by improving how models are grounded, routed, constrained, observed, remembered, validated, and reused.
+```
+
+Key infrastructure slogans:
+
+```text
+Context should be compiled like code.
+Not dumped like garbage.
+
+The model should not read the whole world.
+OwnAI should build the atlas, map the route, and load only what matters.
 ```
 
 Possible ideas:
