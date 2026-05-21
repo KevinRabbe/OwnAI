@@ -111,7 +111,7 @@ Roadmap documents override brainstorm/reference documents for implementation.
 
 | Document | Version | Status | Purpose | Notes |
 |---|---:|---|---|---|
-| `docs/DOCUMENT_REGISTRY.md` | 2.8 | active | Central index of docs, status, and cleanup decisions | This file. Must be updated whenever new architecture/roadmap docs are added. |
+| `docs/DOCUMENT_REGISTRY.md` | 2.9 | active | Central index of docs, status, and cleanup decisions | This file. Must be updated whenever new architecture/roadmap docs are added. |
 | `docs/DOCUMENT_LIFECYCLE_AND_ARCHIVING.md` | 1.0 | active | Defines doc create/split/merge/archive/delete lifecycle | Complements this registry. |
 | `docs/ANTI_DUPLICATION_AND_SOURCE_OF_TRUTH_PROTOCOL.md` | 1.0 | active | Prevents duplicate docs, systems, issues, and source-of-truth conflicts | Agents must check this before creating new architecture or implementation tracks. |
 | `docs/CODING_AGENT_DOCUMENTATION_WORKFLOW.md` | 1.0 | active | Defines how development and runtime agents use docs/operational memory before, during, and after meaningful work | Required workflow for agents. |
@@ -125,7 +125,9 @@ Roadmap documents override brainstorm/reference documents for implementation.
 |---|---:|---|---|---|
 | `docs/ARCHITECTURE_RELATIONSHIP_DIAGRAMS.md` | 1.0 | active | High-level 1→1, 1→N, N→1, and N↔N relationship diagrams | Use before adding new nodes/connections. Helps prevent spaghetti architecture. |
 | `docs/CONNECTION_OWNERSHIP_AND_VALIDATION_MATRIX.md` | 1.0 | active | Defines connection ownership, artifacts, validation paths, risk, and observability | Use before accepting new system connections. |
+| `docs/COGNITION_INFRASTRUCTURE_SYSTEM_BLUEPRINTS.md` | 1.0 | active | Promotes the OwnAI car-around-the-engine thesis into concrete system blueprints for memory, context, proof, replay, tools, safety, autonomy, repo maps, personalization, and consent | Bridge from parking-lot strategy to future roadmap issues. |
 | `docs/REPLACEABLE_SELF_IMPROVING_SUBSYSTEMS.md` | 1.0 | active | Global rule that OwnAI subsystems should be individually improvable, replaceable, benchmarkable, replay-learnable, and safely promotable/rollbackable | Stable contracts, replaceable internals, observable outcomes, replay-based improvement. |
+| `docs/RELATIONSHIP_ENGINE_DOMAIN_PACK_ARCHITECTURE.md` | 1.0 | active | Defines the three-layer relationship reasoning stack: general engine, domain pack system, and BTC-only pack as example | Bitcoin is a pack, not its own engine. |
 | `docs/RELATIONSHIP_ANALYSIS_AND_CAUSAL_CONTEXT.md` | 1.0 | active | Defines relationship analysis, causal context, contradiction detection, scenarios, confidence, and missing-evidence reasoning across complex systems | General reasoning layer for seeing Zusammenhänge; not a trading bot or prediction engine. |
 | `docs/DOMAIN_INTELLIGENCE_PACKS.md` | 1.0 | active | Defines scoped domain intelligence packs for configuring relationship analysis in one complex domain at a time | Domain packs narrow context for better reasoning without becoming automation or prediction engines. |
 | `docs/BITCOIN_MARKET_CONTEXT_PACK.md` | 1.0 | active | BTC-only domain intelligence pack for signal relationships, contradictions, scenarios, confidence, and missing data | Bitcoin is a complex-context reasoning test case, not an automation target. |
@@ -238,6 +240,8 @@ PERMISSION_AND_ACTION_AUTHORITY_MODEL.md
 IMMUNE_SYSTEM_TRUST_BOUNDARY.md
 SANDBOX_TRUST_GRADUATION_MODEL.md
 REPLACEABLE_SELF_IMPROVING_SUBSYSTEMS.md
+COGNITION_INFRASTRUCTURE_SYSTEM_BLUEPRINTS.md
+RELATIONSHIP_ENGINE_DOMAIN_PACK_ARCHITECTURE.md
 RELATIONSHIP_ANALYSIS_AND_CAUSAL_CONTEXT.md
 DOMAIN_INTELLIGENCE_PACKS.md
 BITCOIN_MARKET_CONTEXT_PACK.md
@@ -328,6 +332,8 @@ DOCUMENT_REGISTRY.md
 IMMUNE_SYSTEM_TRUST_BOUNDARY.md
 SANDBOX_TRUST_GRADUATION_MODEL.md
 REPLACEABLE_SELF_IMPROVING_SUBSYSTEMS.md
+COGNITION_INFRASTRUCTURE_SYSTEM_BLUEPRINTS.md
+RELATIONSHIP_ENGINE_DOMAIN_PACK_ARCHITECTURE.md
 RELATIONSHIP_ANALYSIS_AND_CAUSAL_CONTEXT.md
 DOMAIN_INTELLIGENCE_PACKS.md
 BITCOIN_MARKET_CONTEXT_PACK.md
