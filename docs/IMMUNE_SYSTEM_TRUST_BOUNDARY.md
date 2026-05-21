@@ -21,7 +21,13 @@ known OwnAI identity
 → allowed within scope
 
 unknown
-→ untrusted
+→ sandbox first
+
+sandbox result trusted
+→ register with limited scope
+
+sandbox result unsafe or unverifiable
+→ block or quarantine
 
 changed
 → revalidate
@@ -56,7 +62,58 @@ Core rule:
 
 ```text
 Unknown is not accepted as trusted.
-Unknown must become registered, validated, scoped, or quarantined.
+Unknown must become sandboxed, registered, validated, scoped, or quarantined.
+```
+
+---
+
+# Unknown Object Pipeline
+
+Unknown objects should not go directly into the trusted system.
+
+They should enter a sandbox pipeline first.
+
+```text
+unknown object
+→ isolate
+→ inspect metadata
+→ run limited checks
+→ test in sandbox if possible
+→ decide: limited trust, block, or quarantine
+```
+
+Sandboxing means:
+
+```text
+limited permissions
+no access to protected core
+no external actions without approval
+no trust updates
+no registry authority
+no destructive writes
+observable behavior recorded
+```
+
+Possible sandbox outcomes:
+
+```text
+trusted_with_scope
+→ object may be registered with narrow authority
+
+needs_review
+→ human/governance/security review required
+
+blocked
+→ object must not be used
+
+quarantined
+→ preserved as evidence but not trusted
+```
+
+Core rule:
+
+```text
+Unknown must prove itself in a limited environment before it can affect trusted state.
 ```
 
 ---
@@ -129,7 +186,7 @@ Examples:
 - unknown artifact schema
 ```
 
-Non-self should be treated as untrusted by default.
+Non-self should be treated as untrusted by default and routed to sandbox when possible.
 
 ---
 
@@ -205,6 +262,7 @@ Is this allowed?
 Is this backed by evidence?
 Did this change unexpectedly?
 Is this pretending to be trusted?
+Can it be safely sandboxed before trust?
 ```
 
 ---
@@ -235,6 +293,7 @@ The immune layer asks:
 Does this thing belong here?
 Is it still the thing we trust?
 Is it pretending to be trusted?
+Should it be sandboxed before trust?
 ```
 
 ---
@@ -255,6 +314,7 @@ Which evidence supports it?
 Was it validated?
 Did it change after validation?
 Does it request authority it should not have?
+Can it be sandboxed before being trusted?
 ```
 
 ---
@@ -278,6 +338,8 @@ validationStatus
 permissionScope
 trustLevel
 lastVerifiedAt
+sandboxStatus
+sandboxEvidence
 ```
 
 The goal is not decoration.
@@ -304,7 +366,8 @@ unknown worker role
 Response:
 
 ```text
-flag for review or quarantine before use
+sandbox if possible
+otherwise flag for review or quarantine before use
 ```
 
 ---
@@ -395,6 +458,51 @@ block acceptance until evidence exists
 
 ---
 
+# Sandbox Concept
+
+Sandbox is for unknown or changed objects that may be useful but are not trusted yet.
+
+Sandbox means:
+
+```text
+can be observed
+can be tested
+can be inspected
+cannot affect trusted state
+cannot grant itself authority
+cannot bypass governance
+```
+
+Possible sandbox targets:
+
+```text
+unknown package
+unknown repo reference
+unknown script
+unknown worker/tool
+unknown artifact type
+changed dependency
+changed reference repo
+```
+
+Sandbox output should include:
+
+```text
+sandboxRunId
+objectId
+objectType
+checksRun
+observedBehavior
+permissionsUsed
+networkAccess
+fileAccess
+result
+recommendation
+evidenceLinks
+```
+
+---
+
 # Quarantine Concept
 
 Suspicious artifacts should not be deleted immediately.
@@ -432,6 +540,9 @@ Do not trust suspicious objects, but preserve them as evidence.
 ```text
 observe
 → record only
+
+sandbox
+→ isolate and test before trust
 
 warn
 → create non-blocking flag
@@ -514,6 +625,7 @@ Response:
 ```text
 mark reference stale
 re-index chunks
+sandbox changed behavior if executable/relevant
 update affected context packs
 ```
 
@@ -541,6 +653,31 @@ flag prompt injection risk
 
 ---
 
+## Example 5 — Unknown Tool
+
+```text
+A worker proposes using a new CLI tool.
+The tool is not registered.
+```
+
+Immune classification:
+
+```text
+non-self
+```
+
+Response:
+
+```text
+sandbox first
+inspect package identity and install scripts
+run limited checks
+allow only if registered with narrow scope
+otherwise block or quarantine
+```
+
+---
+
 # Integration With Source Code Reference Library
 
 External repos are not OwnAI self by default.
@@ -559,6 +696,8 @@ OwnAI authority
 
 Reference source code can inform implementation, but it cannot override OwnAI governance, registry, permissions, or security rules.
 
+Unknown reference repos should enter the sandbox/reference review path before becoming active references.
+
 ---
 
 # Integration With Package Security
@@ -576,6 +715,8 @@ Dependencies should be checked for:
 ```
 
 This supports the agent-era package safety lesson from modern agentic workflows: agents should not blindly install packages just because generated code requests them.
+
+Unknown dependencies should be sandboxed or blocked before install into trusted workspace.
 
 ---
 
@@ -596,6 +737,10 @@ permission scope matches action
 approval record exists if required
 action evidence recorded after execution
 ```
+
+Unknown actions should not execute directly.
+
+They should be simulated, drafted, or sandboxed when possible.
 
 ---
 
@@ -620,6 +765,8 @@ If not:
 fake-self or authority mismatch
 ```
 
+Sandbox results may contribute to trust, but they do not automatically grant full trust.
+
 ---
 
 # Integration With Heatmap
@@ -630,6 +777,9 @@ Signals:
 
 ```text
 unknown object detected
+sandbox required
+sandbox passed
+sandbox failed
 changed-self detected
 fake-self suspected
 authority mismatch
@@ -657,7 +807,8 @@ Allowed:
 
 ```text
 - define immune classifications
-- add flags for evidence mismatch / authority mismatch
+- define sandbox response stage
+- add flags for evidence mismatch / authority mismatch / sandbox required
 - record suspicious artifact metadata
 - require real evidence for validation/action/trust claims
 - add package/reference safety notes
@@ -689,6 +840,8 @@ Later versions may add:
 - reference repo drift monitor
 - anomaly detection over event streams
 - trusted publisher registry
+- isolated sandbox runner
+- network/file permission monitor
 ```
 
 ---
@@ -706,6 +859,7 @@ Avoid:
 - treating open source as automatically safe
 - assuming known objects remain safe forever
 - accepting unknown objects as trusted because they are convenient
+- running unknown tools directly in trusted workspace
 ```
 
 ---
