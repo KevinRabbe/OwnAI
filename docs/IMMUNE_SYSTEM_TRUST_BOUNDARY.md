@@ -4,23 +4,59 @@ OwnAI needs an immune-system style security layer.
 
 The goal is not to understand every possible attack perfectly.
 
-The goal is to distinguish:
-
-```text
-ours
-```
-
-from:
-
-```text
-fake ours
-```
+The goal is to define OwnAI's own identity clearly enough that anything outside that identity is treated as untrusted until proven otherwise.
 
 ## Core Principle
 
 ```text
-OwnAI does not need to know every possible threat.
-It must know what belongs, what changed, and what is pretending to belong.
+We do not need to know every possible enemy.
+We need to know who we are.
+Everything else is untrusted until proven otherwise.
+```
+
+Operational version:
+
+```text
+known OwnAI identity
+→ allowed within scope
+
+unknown
+→ untrusted
+
+changed
+→ revalidate
+
+pretending
+→ block or quarantine
+```
+
+---
+
+# Identity-First Security
+
+OwnAI should not try to enumerate every possible bad thing in the world.
+
+That does not scale.
+
+Instead, OwnAI should maintain a clear identity boundary:
+
+```text
+what belongs to OwnAI
+who owns it
+what authority it has
+what evidence supports it
+what scope it is allowed to operate in
+```
+
+Anything outside this boundary is not automatically evil.
+
+But it is also not trusted.
+
+Core rule:
+
+```text
+Unknown is not accepted as trusted.
+Unknown must become registered, validated, scoped, or quarantined.
 ```
 
 ---
@@ -70,9 +106,15 @@ Examples:
 - validated task states
 ```
 
+Self requires identity markers.
+
+Something is not self just because it looks familiar.
+
+---
+
 ## Non-Self
 
-Things that do not belong.
+Things that do not belong or are not yet proven to belong.
 
 Examples:
 
@@ -86,6 +128,10 @@ Examples:
 - unknown event type
 - unknown artifact schema
 ```
+
+Non-self should be treated as untrusted by default.
+
+---
 
 ## Changed-Self
 
@@ -104,6 +150,12 @@ Examples:
 - task state schema changed
 ```
 
+Changed-self is not automatically bad.
+
+But it must be revalidated before being trusted again.
+
+---
+
 ## Fake-Self
 
 Things that appear legitimate but are suspicious.
@@ -121,6 +173,8 @@ Examples:
 - dependency with similar name to approved dependency
 - prompt-injected instruction claiming to be system policy
 ```
+
+Fake-self should be blocked or quarantined.
 
 ---
 
@@ -144,10 +198,11 @@ An agent may not understand every exploit.
 But OwnAI can still ask:
 
 ```text
+Is this part of our identity?
 Is this known?
 Is this registered?
 Is this allowed?
-Is this signed by evidence?
+Is this backed by evidence?
 Did this change unexpectedly?
 Is this pretending to be trusted?
 ```
@@ -650,6 +705,7 @@ Avoid:
 - deleting suspicious artifacts before review
 - treating open source as automatically safe
 - assuming known objects remain safe forever
+- accepting unknown objects as trusted because they are convenient
 ```
 
 ---
