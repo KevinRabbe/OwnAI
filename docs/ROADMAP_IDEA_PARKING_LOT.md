@@ -184,8 +184,22 @@ to improve capability without only using a bigger model?
 Core direction:
 
 ```text
-Do not compete only on model size.
-Compete on cognition infrastructure around the model.
+OwnAI does not compete by being the biggest model.
+OwnAI competes by building the best cognition infrastructure around models.
+```
+
+Mental model:
+
+```text
+The model is the engine.
+OwnAI is the vehicle, dashboard, memory, safety system, map, tools, and repair system around it.
+```
+
+Strategic thesis:
+
+```text
+Bigger-model competition is a different battlefield.
+OwnAI should improve capability by improving how models are grounded, routed, constrained, observed, remembered, validated, and reused.
 ```
 
 Possible ideas:
