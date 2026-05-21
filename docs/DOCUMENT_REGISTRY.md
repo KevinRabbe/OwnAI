@@ -111,7 +111,7 @@ Roadmap documents override brainstorm/reference documents for implementation.
 
 | Document | Version | Status | Purpose | Notes |
 |---|---:|---|---|---|
-| `docs/DOCUMENT_REGISTRY.md` | 2.4 | active | Central index of docs, status, and cleanup decisions | This file. Must be updated whenever new architecture/roadmap docs are added. |
+| `docs/DOCUMENT_REGISTRY.md` | 2.5 | active | Central index of docs, status, and cleanup decisions | This file. Must be updated whenever new architecture/roadmap docs are added. |
 | `docs/DOCUMENT_LIFECYCLE_AND_ARCHIVING.md` | 1.0 | active | Defines doc create/split/merge/archive/delete lifecycle | Complements this registry. |
 | `docs/ANTI_DUPLICATION_AND_SOURCE_OF_TRUTH_PROTOCOL.md` | 1.0 | active | Prevents duplicate docs, systems, issues, and source-of-truth conflicts | Agents must check this before creating new architecture or implementation tracks. |
 | `docs/CODING_AGENT_DOCUMENTATION_WORKFLOW.md` | 1.0 | active | Defines how development and runtime agents use docs/operational memory before, during, and after meaningful work | Required workflow for agents. |
@@ -129,6 +129,7 @@ Roadmap documents override brainstorm/reference documents for implementation.
 | `docs/HEATMAP_SIGNAL_SOURCES_AND_SCORING.md` | 1.0 | active | Defines real signal sources, scoring dimensions, lenses, and JSON output for the heatmap system | Implementation bridge from concept to real data. Build the heatmap brain before UI. |
 | `docs/ALGORITHMIC_PRIMITIVES_FOR_OWNAI.md` | 1.0 | active | Defines algorithmic primitives for context reduction, routing, planning, chunk scanning, trust, and safety stops | Use algorithms to reduce model thinking and preserve intelligence with less context. |
 | `docs/SOURCE_CODE_REFERENCE_LIBRARY.md` | 1.0 | active | Defines curated external GitHub/source-code references as chunked, scoped, evidence-linked source material | Code can be source of truth, but only through controlled reference records and context rules. |
+| `docs/REPO_UNDERSTANDING_AND_CONTEXT_ENGINEERING.md` | 1.0 | active | Defines layered, replaceable repo intelligence for large repositories, context packs, repo atlas records, confidence, and retrieval strategy | Stable contracts, replaceable internals. Big repo understanding is not large context. |
 
 ---
 
@@ -232,6 +233,7 @@ COGNITION_SEPARATION_OF_POWERS.md
 PERMISSION_AND_ACTION_AUTHORITY_MODEL.md
 IMMUNE_SYSTEM_TRUST_BOUNDARY.md
 SANDBOX_TRUST_GRADUATION_MODEL.md
+REPO_UNDERSTANDING_AND_CONTEXT_ENGINEERING.md
 ARCHITECTURE_RELATIONSHIP_DIAGRAMS.md
 CONNECTION_OWNERSHIP_AND_VALIDATION_MATRIX.md
 HEATMAP_TELESCOPE_MICROSCOPE_LENS_MODEL.md
@@ -317,6 +319,7 @@ ROADMAP_01_MINIMAL_COGNITION_KERNEL.md
 DOCUMENT_REGISTRY.md
 IMMUNE_SYSTEM_TRUST_BOUNDARY.md
 SANDBOX_TRUST_GRADUATION_MODEL.md
+REPO_UNDERSTANDING_AND_CONTEXT_ENGINEERING.md
 HEATMAP_TELESCOPE_MICROSCOPE_LENS_MODEL.md
 HEATMAP_SIGNAL_SOURCES_AND_SCORING.md
 ALGORITHMIC_PRIMITIVES_FOR_OWNAI.md
