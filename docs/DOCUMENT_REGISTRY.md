@@ -111,7 +111,7 @@ Roadmap documents override brainstorm/reference documents for implementation.
 
 | Document | Version | Status | Purpose | Notes |
 |---|---:|---|---|---|
-| `docs/DOCUMENT_REGISTRY.md` | 2.7 | active | Central index of docs, status, and cleanup decisions | This file. Must be updated whenever new architecture/roadmap docs are added. |
+| `docs/DOCUMENT_REGISTRY.md` | 2.8 | active | Central index of docs, status, and cleanup decisions | This file. Must be updated whenever new architecture/roadmap docs are added. |
 | `docs/DOCUMENT_LIFECYCLE_AND_ARCHIVING.md` | 1.0 | active | Defines doc create/split/merge/archive/delete lifecycle | Complements this registry. |
 | `docs/ANTI_DUPLICATION_AND_SOURCE_OF_TRUTH_PROTOCOL.md` | 1.0 | active | Prevents duplicate docs, systems, issues, and source-of-truth conflicts | Agents must check this before creating new architecture or implementation tracks. |
 | `docs/CODING_AGENT_DOCUMENTATION_WORKFLOW.md` | 1.0 | active | Defines how development and runtime agents use docs/operational memory before, during, and after meaningful work | Required workflow for agents. |
@@ -127,6 +127,8 @@ Roadmap documents override brainstorm/reference documents for implementation.
 | `docs/CONNECTION_OWNERSHIP_AND_VALIDATION_MATRIX.md` | 1.0 | active | Defines connection ownership, artifacts, validation paths, risk, and observability | Use before accepting new system connections. |
 | `docs/REPLACEABLE_SELF_IMPROVING_SUBSYSTEMS.md` | 1.0 | active | Global rule that OwnAI subsystems should be individually improvable, replaceable, benchmarkable, replay-learnable, and safely promotable/rollbackable | Stable contracts, replaceable internals, observable outcomes, replay-based improvement. |
 | `docs/RELATIONSHIP_ANALYSIS_AND_CAUSAL_CONTEXT.md` | 1.0 | active | Defines relationship analysis, causal context, contradiction detection, scenarios, confidence, and missing-evidence reasoning across complex systems | General reasoning layer for seeing Zusammenhänge; not a trading bot or prediction engine. |
+| `docs/DOMAIN_INTELLIGENCE_PACKS.md` | 1.0 | active | Defines scoped domain intelligence packs for configuring relationship analysis in one complex domain at a time | Domain packs narrow context for better reasoning without becoming automation or prediction engines. |
+| `docs/BITCOIN_MARKET_CONTEXT_PACK.md` | 1.0 | active | BTC-only domain intelligence pack for signal relationships, contradictions, scenarios, confidence, and missing data | Bitcoin is a complex-context reasoning test case, not an automation target. |
 | `docs/HEATMAP_TELESCOPE_MICROSCOPE_LENS_MODEL.md` | 1.0 | active | Defines the conceptual attention-navigation model for OwnAI | Visual cognition/navigation concept. Full UI comes later; Roadmap 01 only lays data foundations. |
 | `docs/HEATMAP_SIGNAL_SOURCES_AND_SCORING.md` | 1.0 | active | Defines real signal sources, scoring dimensions, lenses, and JSON output for the heatmap system | Implementation bridge from concept to real data. Build the heatmap brain before UI. |
 | `docs/ALGORITHMIC_PRIMITIVES_FOR_OWNAI.md` | 1.0 | active | Defines algorithmic primitives for context reduction, routing, planning, chunk scanning, trust, and safety stops | Use algorithms to reduce model thinking and preserve intelligence with less context. |
@@ -237,6 +239,8 @@ IMMUNE_SYSTEM_TRUST_BOUNDARY.md
 SANDBOX_TRUST_GRADUATION_MODEL.md
 REPLACEABLE_SELF_IMPROVING_SUBSYSTEMS.md
 RELATIONSHIP_ANALYSIS_AND_CAUSAL_CONTEXT.md
+DOMAIN_INTELLIGENCE_PACKS.md
+BITCOIN_MARKET_CONTEXT_PACK.md
 REPO_UNDERSTANDING_AND_CONTEXT_ENGINEERING.md
 ARCHITECTURE_RELATIONSHIP_DIAGRAMS.md
 CONNECTION_OWNERSHIP_AND_VALIDATION_MATRIX.md
@@ -325,6 +329,8 @@ IMMUNE_SYSTEM_TRUST_BOUNDARY.md
 SANDBOX_TRUST_GRADUATION_MODEL.md
 REPLACEABLE_SELF_IMPROVING_SUBSYSTEMS.md
 RELATIONSHIP_ANALYSIS_AND_CAUSAL_CONTEXT.md
+DOMAIN_INTELLIGENCE_PACKS.md
+BITCOIN_MARKET_CONTEXT_PACK.md
 REPO_UNDERSTANDING_AND_CONTEXT_ENGINEERING.md
 HEATMAP_TELESCOPE_MICROSCOPE_LENS_MODEL.md
 HEATMAP_SIGNAL_SOURCES_AND_SCORING.md
