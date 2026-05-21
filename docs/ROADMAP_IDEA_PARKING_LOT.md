@@ -172,6 +172,86 @@ kernel-compatible
 
 These are valuable but should not distract from Roadmap 01.
 
+## Differentiated Capability Ideas — What OwnAI Could Do Differently
+
+Question:
+
+```text
+What could OwnAI do differently from normal AI products,
+to improve capability without only using a bigger model?
+```
+
+Core direction:
+
+```text
+Do not compete only on model size.
+Compete on cognition infrastructure around the model.
+```
+
+Possible ideas:
+
+```text
+1. Evidence-first thinking
+→ Every important answer/action has evidence links, confidence, missing evidence, and contradiction checks.
+
+2. Replay-native learning
+→ OwnAI improves from past task outcomes instead of forgetting every workflow after chat ends.
+
+3. Context as engineered fuel
+→ Context is selected, scoped, versioned, and justified instead of dumped into the model.
+
+4. Relationship-first reasoning
+→ OwnAI maps Zusammenhänge between entities, signals, files, tests, docs, risks, and outcomes.
+
+5. Replaceable providers everywhere
+→ Every subsystem can improve or be rewritten behind stable contracts.
+
+6. Shadow-mode improvement
+→ New subsystem versions run in parallel before they control decisions.
+
+7. Immune-system trust boundary
+→ OwnAI defines what belongs to itself, sandboxes unknowns, and blocks fake-self objects.
+
+8. Local operational memory
+→ Docs, decisions, task state, replay, and trust records become durable memory, not loose chat history.
+
+9. Context economy metric
+→ Track decision quality per context token, not only raw accuracy.
+
+10. Human-governed autonomy
+→ OwnAI can continue safe independent work around blocked dependencies, but external/destructive actions need approval.
+
+11. Source-code reference library
+→ Curated code references become chunked, scoped, evidence-linked context sources.
+
+12. Relationship domain packs
+→ Complex domains can be understood one scoped pack at a time without becoming uncontrolled automation.
+
+13. Explainability as validation
+→ If an agent cannot explain what its code does against the actual implementation, the branch is suspicious.
+
+14. Contradiction-driven work
+→ Contradictions between docs, code, tests, claims, and evidence automatically create validation pressure.
+
+15. Capability quarantine
+→ Unknown tools/packages/scripts may exist but cannot affect trusted state until sandboxed and scoped.
+```
+
+Different thinking perspective:
+
+```text
+Most AI products focus on answering.
+OwnAI should focus on knowing what it knows, why it knows it, what it does not know, and what should happen next.
+```
+
+Reason parked:
+
+```text
+This is strategic direction. Individual ideas should be promoted only when they strengthen a roadmap issue.
+```
+
+---
+
 ## Future Interface Layer — Editor Adapter, Browser Workspace, Terminal Adapter
 
 OwnAI should not replace trusted user tools too early.
